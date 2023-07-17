@@ -1,0 +1,38 @@
+body{
+  width: 85%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.815);
+}
+.container{
+  margin-top: 2.5em;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  
+  width: 100%;
+
+}
+.data-panel{
+  padding: 2em;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+}
+
+
+
+
+.td-title{
+  line-height:3em;
+  font-weight: 700;
+}
+#td-title-1 ,#td-title-6 {
+  line-height: 5em;
+  
+}
+
+.form-check-label{
+  font-weight: 700;
+}
+
+.card-footer.text-muted.text-end{
+  min-height: 5em;
+}

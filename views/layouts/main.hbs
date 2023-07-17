@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="/stylesheet/bootstrap.css">
+  <link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+
+<body>
+   <div class="container"> 
+    
+    <div class="data-panel"> 
+    <table class="table table-borderless align-middle">
+      <thead>
+        <h3> Password Generator </h3>
+      </thead>
+      <hr>
+      <tbody>
+        
+        <tr>
+          <td class="td-title" id="td-title-1">
+            <label for="inputPassword5" class="form-label">Password Length</label>
+          </td>
+          <td class="align-bottom">
+            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+            <div id="passwordHelpBlock" class="form-text">
+              length is available between 4~16
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-title" id="td-title-2">Include LowerCase Characters</td>
+          <td class="w-75" >
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="check1">
+            <label class="form-check-label" for="check1">
+              (abcd...)
+            </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-title" >Include UpperCase Characters</td>
+          <td>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="check2">
+              <label class="form-check-label" for="check2">
+                (ABCD...)
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-title" >Include Numbers</td>
+          <td>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="check3">
+              <label class="form-check-label" for="check3">
+                (1234...)
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-title" >Include Symbols</td>
+          <td>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="check4">
+              <label class="form-check-label" for="check4">
+                (+=-#...)
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-title" id="td-title-6">Exclude Characters</td>
+          <td class="align-bottom" >
+            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+            <div id="passwordHelpBlock" class="form-text">
+              These characters will not appear in the password
+            </div>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+      <div>
+        {{{body}}}
+        <button class="btn btn-lg btn-primary generate">Generate</button>
+      </div>
+      
+      
+    </div >
+    <div class="card-footer text-muted text-end">
+      password generator
+    </div>
+  </div>
+  
+  
+ 
+  <script src="/javascript/bootstrap.bundle.js"></script>
+  
+</body>
+
+</html>
