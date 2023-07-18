@@ -16,7 +16,7 @@ $ git clone https://github.com/se040054/password-generator
 ```
 2. change directory 
 ```
-$ cd /password-generator
+$ cd password-generator
 ```
 3. install package 
 ```
