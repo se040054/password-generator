@@ -36,3 +36,7 @@ body{
 .card-footer.text-muted.text-end{
   min-height: 5em;
 }
+
+#submit-btn{
+  margin-right: 2em;
+}
