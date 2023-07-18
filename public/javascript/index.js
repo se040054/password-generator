@@ -3,23 +3,49 @@ module.exports.generate =function (data){
   const type2="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const type3="0123456789";
   const type4="!#$%&()*+,-./:;<=>?@[]^_{|}~"; 
-  let AllChars="";
+  let allChars="";
   const length=Number(data.extent)
   let password=''
   if (data.lowerCase==='on'){
-    AllChars+=type1
+    allChars+=type1
   }
   if (data.upperCase==='on'){
-    AllChars+=type2
+    allChars+=type2
   }
   if (data.number==='on'){
-    AllChars+=type3
+    allChars+=type3
   }
   if (data.symbol==='on'){
-    AllChars+=type4
+    allChars+=type4
   }
+  if (data.exclude){
+    // console.log("exclude" + data.exclude)
+    allChars = excludeChars(allChars)
+  }
+ 
+
   while (password.length<length){
-    password += AllChars[Math.floor(Math.random()*AllChars.length)]
+    password += allChars[Math.floor(Math.random()*allChars.length)]
   }
   return password ;
+
+
+
+function excludeChars(string){ //放在外面會讀不到data
+  let charArr = Array.from(string)
+  let excludeCharArr = [...new Set(Array.from(data.exclude))] //字串只需要剔除一次，轉集合再展開回陣列去重複
+
+  let filterChars = charArr.filter((char)=>{
+    if (excludeCharArr.includes(char)){
+      //console.log(char +  "has been removed")
+      return false
+    }else {
+      return true
+    }
+  })
+  return filterChars.join('')
 }
+
+
+}
+
