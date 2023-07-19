@@ -22,7 +22,7 @@ app.post('/password-generator',(req,res)=>{
   const data=req.body
   const password = js.generate(data)
   // console.log(password)
-  res.render('index',{password})
+  res.render('index',{password,data})
 })
 
 app.listen(port, () => {
