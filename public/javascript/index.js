@@ -48,6 +48,6 @@ function excludeChars(string){ //放在外面會讀不到data
 
 function onCopyClicked(){
   event.preventDefault(); //雖然這裡標註錯誤 但其實可用
-  navigator.clipboard.writeText(copyPass)
-  alert(`Copy : ${copyPass}`)
+  navigator.clipboard.writeText(password) //這邊password是從從main.hbs模板語法let password = "{{password}}"傳遞 不是上面那塊
+  alert(`Copy : ${password}`)
 }
