@@ -91,11 +91,13 @@
     {{{body}}}
       <div>
         <button id="submit-btn" type="submit" class="btn btn-lg btn-outline-success">Generate</button>
-        <a class="btn btn-lg btn-outline-primary" href="/">Reset</a> {{!其實沒用}}
+        <a class="btn btn-lg btn-outline-primary" href="/">Reset</a> 
       </div>
     </form>
     </div >
-
+    <div>
+     
+    </div>
     
     
     <div class="card-footer text-muted text-end">
@@ -104,6 +106,7 @@
   </div>
   
   <script>
+    let copyPass = "{{password}}"
     const form=document.querySelector('#form')
     const submitBtn=document.querySelector('#submit-btn')
     const checkboxes = Array.from(document.querySelectorAll('input[type="checkbox"]'))
