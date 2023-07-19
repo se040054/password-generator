@@ -34,16 +34,10 @@ module.exports.generate =function (data){
 function excludeChars(string){ //放在外面會讀不到data
   let charArr = Array.from(string)
   let excludeCharArr = [...new Set(Array.from(data.exclude))] //字串只需要剔除一次，轉集合再展開回陣列去重複
-
-  let filterChars = charArr.filter((char)=>{
-    if (excludeCharArr.includes(char)){
-      //console.log(char +  "has been removed")
-      return false
-    }else {
-      return true
-    }
-  })
-  return filterChars.join('')
+  charArr = charArr.filter(
+    char=>!excludeCharArr.includes(char)
+  )
+  return charArr.join('')
 }
 
 
