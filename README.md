@@ -2,12 +2,21 @@
 
 What a useful website that you can generate random password here ! 
 
-![](https://cdn.discordapp.com/attachments/1116356872572784661/1130652419915788378/2023-07-18_08-08-41.jpg)
+![](https://cdn.discordapp.com/attachments/1116356872572784661/1131308486425325709/2023-07-20_03-34-58.jpg)
+
+
+# Functions !
+
+1.Generator random passwords and you can use some settings
+
+2.Click the "Copy" button to copy password that you make 
+
+3.Reset settings
+
 
 # How to use
  
 Before these steps , you need install node.js and git in your computer. 
-
 
 
 1. clone this project :
