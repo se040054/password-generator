@@ -7,7 +7,7 @@ What a useful website that you can generate random password here !
 
 # Functions !
 
-1.Generator random passwords and you can use some settings
+1.Generate random passwords and you can use some settings
 
 2.Click the "Copy" button to copy password that you make 
 
