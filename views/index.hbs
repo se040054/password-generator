@@ -1,3 +1,3 @@
-<div class="alert alert-info" id="password" role="alert">
-  {{password}}  {{#if password}}<button class="btn btn-lg btn-info" onclick="onCopyClicked()">Copy</button>{{/if}}
+<div  id="password" role="alert">
+  <span id="random password">{{password}}</span>  {{#if password}} <a tabindex="0"  role="button" class="btn btn-lg btn-outline-warning" onclick="onCopyClicked()"  data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Copy ! " data-bs-trigger="focus"  data-bs-custom-class="custom-popover-style" >Copy</a>{{/if}}
 </div>

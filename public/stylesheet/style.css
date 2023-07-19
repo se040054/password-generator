@@ -50,4 +50,17 @@ body{
   min-height: 3em ;
   font-size: 20px;
   font-weight: 700;
+  background-color: #560f7dbd;
+  border-radius: 15px;
+  padding: 1em;
+  margin: 1em;
+  justify-content: center;
+  color: azure;
+}
+
+.popover-body {
+  background-color: #f1c3f7bd;
+  padding: 0.5rem 0.5rem;
+  color: rgb(123, 7, 255);
+  font-weight: bolder;
 }

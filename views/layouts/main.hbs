@@ -105,6 +105,7 @@
     </div>
   </div>
   
+  <script src="/javascript/bootstrap.bundle.js"></script>
   <script>
     let password = "{{password}}"
     const form=document.querySelector('#form')
@@ -130,16 +131,25 @@
           event.preventDefault()
         }
     })
+    
     function selectCheckBox(){
       isChecked=checkboxes.some((checkbox)=>{ //雖然有報錯 但執行其實沒問題
         return checkbox.checked //每個check box 在勾選時會有一個checked的屬性被設置true
       })
     }
     
+
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+      var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+      })
+    var popover = new bootstrap.Popover(document.querySelector('.popover-dismiss'), {
+          trigger: 'focus'
+        })
   </script>
 
  
-  <script src="/javascript/bootstrap.bundle.js"></script>
+  
   <script src="/javascript/index.js"></script>
 </body>
 
