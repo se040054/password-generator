@@ -12,7 +12,7 @@
    <div class="container">
     <div class="data-panel">  
 
-    <form method="POST" action="/form">
+    <form novalidate method="POST" id="form" action="/password-generator">
     <table class="table table-borderless align-middle">
       <thead>
         <h3> Password Generator </h3>
@@ -20,22 +20,21 @@
       <hr>
       <tbody>
         
-        <tr>
-          <td class="td-title" id="td-label-1">
-            <label for="td-input-1" class="form-label">Password Length</label>
+        <tr class="mb-3">
+          <td class="td-title" id="td-title-1">
+            <label for="td-input-1" class="form-label">* Password Length</label>
           </td>
-          <td class="align-bottom">
-            <input type="number"  id="td-input-1" class="form-control" aria-describedby="passwordHelpBlock" name="extent">
-            <div id="passwordHelpBlock" class="form-text">
-              length is available between 4~16
-            </div>
+          <td >
+            <input type="number"  id="td-input-1" class="form-control" aria-describedby="passwordHelpBlock" name="extent"  placeholder="length is available between 4~16" min="4" max="16" required >
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">Length must falls within the range of 4~16</div>
           </td>
         </tr>
         <tr>
           <td class="td-title" id="td-title-2">Include LowerCase Characters</td>
           <td class="w-75" >
             <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="lowerCase" id="check1">
+            <input class="form-check-input" type="checkbox" name="lowerCase" id="check1" >
             <label class="form-check-label" for="check1">
               (abcd...)
             </label>
@@ -79,20 +78,20 @@
           <td class="td-title" id="td-title-6">
             <label for="td-input-2" class="form-label">Exclude Characters</label>
           </td>
-          <td class="align-bottom" >
-            <input type="text" id="td-input-2" class="form-control" aria-describedby="passwordHelpBlock" name="exclude" min="4" max="16">
-            <div id="passwordHelpBlock" class="form-text">
-              These characters will not appear in the password
-            </div>
+          <td>
+            
+            <input type="text" id="td-input-2" class="form-control" aria-describedby="passwordHelpBlock" name="exclude" placeholder="These characters will not appear in the password" >
+            
           </td>
         </tr>
       </tbody>
 
     </table>
+      <div id="non-choose"></div>
     {{{body}}}
       <div>
         <button id="submit-btn" type="submit" class="btn btn-lg btn-primary">Generate</button>
-        <button class="btn btn-lg btn-primary">Clear</button> {{!其實沒用}}
+        <button class="btn btn-lg btn-primary" href="http://localhost:3000/password-generator">Clear</button> {{!其實沒用}}
       </div>
     </form>
     </div >
@@ -104,6 +103,37 @@
     </div>
   </div>
   
+  <script>
+    const form=document.querySelector('#form')
+    const submitBtn=document.querySelector('#submit-btn')
+    const checkboxes = Array.from(document.querySelectorAll('input[type="checkbox"]'))
+    const inputLength=document.querySelector('#td-input-1')
+    submitBtn.addEventListener('click' ,function onSubmitBtnClicked(event){
+      form.classList.add('was-validated')
+      selectCheckBox()
+    })
+
+    form.addEventListener('submit' ,function onFormSubmit(event){
+        if (!form.checkValidity() ) {
+        console.log("資料未填寫")
+        console.log(checkboxes)
+        event.stopPropagation()
+        event.preventDefault()
+      }
+        if (!isChecked){
+          const empty=document.querySelector('#non-choose')
+          empty.innerText="Choose at least one password string type ! "
+          event.stopPropagation()
+          event.preventDefault()
+        }
+    })
+    function selectCheckBox(){
+      isChecked=checkboxes.some((checkbox)=>{ //雖然有報錯 但執行其實沒問題
+        return checkbox.checked //每個check box 在勾選時會有一個checked的屬性被設置true
+      })
+    }
+    
+  </script>
 
  
   <script src="/javascript/bootstrap.bundle.js"></script>

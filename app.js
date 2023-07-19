@@ -14,10 +14,11 @@ app.get('/', (req, res) => {
 })
 
 app.get('/password-generator',(req,res)=>{
+  
   res.render('index')
 })
 
-app.post('/form',(req,res)=>{
+app.post('/password-generator',(req,res)=>{
   const data=req.body
   const password = js.generate(data)
   // console.log(password)
