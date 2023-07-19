@@ -35,7 +35,7 @@ function excludeChars(string){ //放在外面會讀不到data
   let charArr = Array.from(string)
   let excludeCharArr = [...new Set(Array.from(data.exclude))] //字串只需要剔除一次，轉集合再展開回陣列去重複
   charArr = charArr.filter(
-    char=>!excludeCharArr.includes(char)
+    char=>!excludeCharArr.includes(char) //包含排除文字 include會true 用驚嘆號反轉,回傳false
   )
   return charArr.join('')
 }
