@@ -22,7 +22,10 @@ module.exports.generate =function (data){
     // console.log("exclude" + data.exclude)
     allChars = excludeChars(allChars)
   }
- 
+  
+  if (!allChars){
+    return "Hey! You deleted all the characters you can generate. "
+  }
 
   while (password.length<length){
     password += allChars[Math.floor(Math.random()*allChars.length)]
